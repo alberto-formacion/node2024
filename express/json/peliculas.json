@@ -1,0 +1,91 @@
+[{
+    "id": "1",
+    "titulo": "Titanic",
+    "anyo": 1997,
+    "directores": ["James Cameron"],
+    "actores": ["Leonardo DiCaprio", "Kate Winslet"],
+    "sinopsis": "Una historia de amor épica en el contexto del desastre del Titanic.",
+    "duracion": 195
+  },
+  {
+    "id": "2",
+    "titulo": "El Padrino",
+    "anyo": 1972,
+    "directores": ["Francis Ford Coppola"],
+    "actores": ["Marlon Brando", "Al Pacino"],
+    "sinopsis": "La historia de una poderosa familia criminal italoamericana dirigida por Don Vito Corleone.",
+    "duracion": 175
+  },
+  {
+    "id": "3",
+    "titulo": "La lista de Schindler",
+    "anyo": 1993,
+    "directores": ["Steven Spielberg"],
+    "actores": ["Liam Neeson", "Ben Kingsley"],
+    "sinopsis": "La historia real de Oskar Schindler, un empresario que salva a más de mil judíos durante el Holocausto.",
+    "duracion": 195
+  },
+  {
+    "id": "4",
+    "titulo": "Forrest Gump",
+    "anyo": 1994,
+    "directores": ["Robert Zemeckis"],
+    "actores": ["Tom Hanks", "Robin Wright"],
+    "sinopsis": "La vida de Forrest Gump, un hombre con un coeficiente intelectual bajo pero una gran determinación.",
+    "duracion": 142
+  },
+  {
+    "id": "5",
+    "titulo": "El Señor de los Anillos: La Comunidad del Anillo",
+    "anyo": 2001,
+    "directores": ["Peter Jackson"],
+    "actores": ["Elijah Wood", "Ian McKellen"],
+    "sinopsis": "Un hobbit llamado Frodo Baggins emprende un viaje para destruir un anillo maligno y salvar a su mundo de la oscuridad.",
+    "duracion": 178
+  },
+  {
+    "id": "6",
+    "titulo": "El Silencio de los Corderos",
+    "anyo": 1991,
+    "directores": ["Jonathan Demme"],
+    "actores": ["Jodie Foster", "Anthony Hopkins"],
+    "sinopsis": "Una agente del FBI busca la ayuda de un asesino en serie encarcelado para atrapar a otro asesino en serie que está suelto.",
+    "duracion": 118
+  },
+  {
+    "id": "7",
+    "titulo": "Pulp Fiction",
+    "anyo": 1994,
+    "directores": ["Quentin Tarantino"],
+    "actores": ["John Travolta", "Uma Thurman"],
+    "sinopsis": "Una serie de historias interconectadas que involucran a criminales, boxeadores, gánsteres y drogadictos.",
+    "duracion": 154
+  },
+  {
+    "id": "8",
+    "titulo": "Cadena Perpetua",
+    "anyo": 1994,
+    "directores": ["Frank Darabont"],
+    "actores": ["Tim Robbins", "Morgan Freeman"],
+    "sinopsis": "Un hombre inocente es sentenciado a cadena perpetua en una prisión brutal, donde forma una amistad inquebrantable con otro recluso.",
+    "duracion": 142
+  },
+  {
+    "id": "9",
+    "titulo": "Gladiador",
+    "anyo": 2000,
+    "directores": ["Ridley Scott"],
+    "actores": ["Russell Crowe", "Joaquin Phoenix"],
+    "sinopsis": "La historia de un general romano traicionado que busca venganza contra el emperador que mató a su familia y lo envió al exilio.",
+    "duracion": 155
+  },
+  {
+    "id": "10",
+    "titulo": "La Vida es Bella",
+    "anyo": 1997,
+    "directores": ["Roberto Benigni"],
+    "actores": ["Roberto Benigni", "Nicoletta Braschi"],
+    "sinopsis": "Un padre judío usa su imaginación para proteger a su hijo del horror de un campo de concentración nazi.",
+    "duracion": 116
+  
+}]
