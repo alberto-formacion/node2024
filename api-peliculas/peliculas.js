@@ -17,7 +17,8 @@ const peliculaSchema = new mongoose.Schema({
     directores: [String],
     actores: [String],
     sinopsis: String,
-    duracion: Number
+    duracion: Number,
+    recaudacion: Number
 });
 
 const Pelicula = mongoose.model('Pelicula', peliculaSchema);
