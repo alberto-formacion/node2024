@@ -1,0 +1,25 @@
+Campos Requeridos:
+    z.nonempty()
+Tipos de Datos:
+    z.string(): Valida que el valor sea una cadena de texto.
+    z.number(): Valida que el valor sea un número.
+    z.boolean(): Valida que el valor sea un booleano.
+    z.array(): Valida que el valor sea un array.
+Validaciones de Cadena:
+    min(minLength: number): Valida que la cadena tenga una longitud mínima.
+    max(maxLength: number): Valida que la cadena tenga una longitud máxima.
+    email(): Valida que la cadena sea un correo electrónico válido.
+Validaciones Numéricas:
+    int(): Valida que el número sea un entero.
+    positive(): Valida que el número sea positivo.
+    negative(): Valida que el número sea negativo.
+Validaciones de Arrays:
+    min(minLength: number): Valida que el arreglo tenga una longitud mínima.
+    max(maxLength: number): Valida que el arreglo tenga una longitud máxima.
+    nonempty(): Valida que el arreglo no esté vacío.
+Validaciones de Objetos:
+    shape({}): Valida la forma de un objeto y sus propiedades.
+    nullable(): Permite que el valor sea nulo.
+Combinadores:
+    or(): Valida que el valor cumpla con al menos una de las validaciones proporcionadas.
+    and(): Valida que el valor cumpla con todas las validaciones proporcionadas.

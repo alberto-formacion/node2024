@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Pelicula = require('../models/Pelicula');
+const Pelicula = require('../model/Pelicula');
+const { validatePelicula } = require('../validations/validations-middleware');
 
 // Obtener todas las películas
 router.get('/', async (req, res) => {
@@ -26,7 +27,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Crear una nueva película
-router.post('/', async (req, res) => {
+router.post('/', validatePelicula, async (req, res) => {
     const pelicula = new Pelicula({
         titulo: req.body.titulo,
         anyo: req.body.anyo,
@@ -45,7 +46,7 @@ router.post('/', async (req, res) => {
 });
 
 // Actualizar una película por ID
-router.put('/:id', async (req, res) => {
+router.put('/:id', validatePelicula, async (req, res) => {
     try {
         const pelicula = await Pelicula.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (!pelicula) {

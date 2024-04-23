@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Actor = require('../models/Actor');
+const Actor = require('../model/Actor');
+const { validateActor } = require('../validations/validations-middleware');
 
 // Obtener todos los actores
 router.get('/', async (req, res) => {
@@ -26,7 +27,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Crear un nuevo actor
-router.post('/', async (req, res) => {
+router.post('/', validateActor, async (req, res) => {
     const actor = new Actor({
         nombre: req.body.nombre,
         edad: req.body.edad,
@@ -42,7 +43,7 @@ router.post('/', async (req, res) => {
 });
 
 // Actualizar un actor por ID
-router.put('/:id', async (req, res) => {
+router.put('/:id',validateActor, async (req, res) => {
     try {
         const actor = await Actor.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (!actor) {
