@@ -1,5 +1,5 @@
 Campos Requeridos:
-    z.nonempty()
+    z.nonempty() //deprecated => por defecto es required sino hay que decirle nullable
 Tipos de Datos:
     z.string(): Valida que el valor sea una cadena de texto.
     z.number(): Valida que el valor sea un número.
@@ -16,7 +16,7 @@ Validaciones Numéricas:
 Validaciones de Arrays:
     min(minLength: number): Valida que el arreglo tenga una longitud mínima.
     max(maxLength: number): Valida que el arreglo tenga una longitud máxima.
-    nonempty(): Valida que el arreglo no esté vacío.
+    nonempty(): Valida que el arreglo no esté vacío. //deprecated
 Validaciones de Objetos:
     shape({}): Valida la forma de un objeto y sus propiedades.
     nullable(): Permite que el valor sea nulo.
