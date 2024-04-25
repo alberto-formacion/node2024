@@ -6,7 +6,8 @@ const { validatePelicula } = require('../validations/validations-middleware');
 // Obtener todas las películas
 router.get('/', async (req, res) => {
     try {
-        const peliculas = await Pelicula.find();
+        //const peliculas = await Pelicula.find().populate('actores', 'nombre nacionalidad'); => en caso de querer solo algunos campos
+        const peliculas = await Pelicula.find().populate('actores');
         res.json(peliculas);
     } catch (error) {
         res.status(500).json({ message: error.message });

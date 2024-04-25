@@ -4,7 +4,7 @@ const peliculaSchema = new mongoose.Schema({
     titulo: String,
     anyo: Number,
     directores: [String],
-    actores: [String],
+    actores: [{ref: 'Actor', type: mongoose.Schema.Types.ObjectId}],
     sinopsis: String,
     duracion: Number
 });
