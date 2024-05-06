@@ -1,0 +1,6 @@
+Endpoints
+CreateReadUpdateDelete - Equipos (nombre, año de fundacion, numero socios, escudo, presidente)
+CreateReadUpdateDelete - Estadios (nombre, año de inauguracion, aforo, pista atletismo, coords)
+CreateReadUpdateDelete - Jugadores (nombre, apellidos, decha nacimiento, demarcacion, debut, internacional, pierna buena, pais)
+
+BD - mongo

@@ -1,0 +1,11 @@
+use peliculas //para que db sea peliculas
+db.createCollection("peliculas") //crea la BD peliculas
+db.peliculas.insert({
+    
+})// guarda records
+
+db.peliculas.update({user: "cosa"}, {
+    $set: {
+        name: "cosa"
+    }
+})//forma correcta de hacer update
