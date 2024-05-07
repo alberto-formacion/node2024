@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .mensaje-propio{
+            color: red;
+        }
+    </style>
     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
     <script type="module">
-        const socket = io('ws://172.26.22.50:3000')
+        const socket = io('ws://localhost:3000')
 
         const form = document.getElementById('formulario')
-        const input = document.getElementById('mensaje')
+        const inputMensaje = document.getElementById('mensaje')
+        const inputUsuario = document.getElementById('usuario')
         const mensajes = document.getElementById('mensajes')
+        const btnEnviarMensaje = document.getElementById('btnEnviarMensaje')
+        const btnEntrar = document.getElementById('btnEntrar')
 
-        socket.on('chat message', (msg) => {
+        socket.on('chat message', (data) => {
             const item = document.createElement('li')
-            const text = document.createTextNode(msg);
-            item.appendChild(text);
+            const text = document.createTextNode(`${data.user}: ${data.msg}`)
+            item.appendChild(text)
             
             mensajes.insertAdjacentElement("beforeend", item)
         })
@@ -23,19 +31,59 @@
         form.addEventListener('submit', (e)=>{
             e.preventDefault()
 
-            if(input.value){
-                socket.emit('chat message', input.value)
-                input.value = ''
+            if(inputMensaje.value){
+                const mensaje = {
+                    msg: inputMensaje.value,
+                    user: inputUsuario.value
+                }
+                socket.emit('chat message', mensaje)
+                inputMensaje.value = ''
+            }
+        })
+
+        document.addEventListener("DOMContentLoaded", ()=>{
+            inputMensaje.style.display = 'none'
+            btnEnviarMensaje.style.display = 'none'
+        });
+
+        btnEntrar.addEventListener("click", async ()=>{
+            if(inputUsuario.value){
+                inputUsuario.readOnly = true;
+                btnEntrar.style.display = 'none'
+
+                const response = await fetch('http://localhost:3000/menssages')
+                const messages = await response.json();
+
+                console.log(messages)
+
+                messages.forEach(mensaje => {
+                    const li = document.createElement('li');
+                    let styles = ''
+
+                    if(mensaje.user === inputUsuario.value){
+                        styles = 'mensaje-propio'
+                    }
+
+                    li.className = styles
+
+                    li.textContent = `${mensaje.user}: ${mensaje.message}`;
+                    mensajes.insertAdjacentElement("beforeend", li)
+                });
+
+                inputMensaje.style.display = 'inline'
+                btnEnviarMensaje.style.display = 'inline'
             }
         })
     </script>
 </head>
 <body>
-    <div id="chat">
+    <div id="chat">   
+        <input type="text" id="usuario" name="usuario" placeholder="Tu nombre de usuario" autocomplete="off">
+        <button id="btnEntrar" type="button">Entrar</button>
         <ul id="mensajes"></ul>
         <form id="formulario">
             <input type="text" id="mensaje" name="mensaje" placeholder="Escribe aqui tu mensaje..." autocomplete="off">
-            <button type="submit">Enviar</button>
+            <button id="btnEnviarMensaje" type="submit">Enviar</button>
         </form>
     </div>
 </body>
